@@ -23,7 +23,7 @@ namespace InputToSender.SenderTests
         [Fact]
         public void TestExpectingProvidedCSVFileToBeReadWhenCalledWithFilePath()
         {
-            string filepath = "..\SenderTests\TestSample.csv";
+            string filepath = "TestSample.csv";
             CSVInput csvInput = new CSVInput(filepath);
             List<List<string>> testOutput = (List<List<string>>)csvInput.ReadInput();
             Debug.Assert(testOutput[0][0] == "sampledata");
