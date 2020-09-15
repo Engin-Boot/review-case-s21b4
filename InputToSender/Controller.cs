@@ -21,7 +21,7 @@ namespace InputToSender
         {
             outputInterface.WriteOutput(parsedData);
         }
-        static void Main(string[] args)
+        static void _Main(string[] args)
         {
             string filepath = Console.ReadLine();
             //string filter = args[0];
