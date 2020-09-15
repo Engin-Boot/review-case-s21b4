@@ -23,7 +23,7 @@ namespace InputToSender.SenderTests
         [Fact]
         public void TestExpectingProvidedCSVFileToBeReadWhenCalledWithFilePath()
         {
-            string filepath = "TestSample.csv";
+            string filepath = "https://github.com/Engin-Boot/review-case-s21b4/blob/master/SenderTests/TestSample.csv";
             CSVInput csvInput = new CSVInput(filepath);
             List<List<string>> testOutput = (List<List<string>>)csvInput.ReadInput();
             Debug.Assert(testOutput[0][0] == "sampledata");
