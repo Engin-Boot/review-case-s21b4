@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Sender\Sender.csproj" />
+    <ProjectReference Include="..\Sender\InputToSender.csproj" />
   </ItemGroup>
 
 </Project>
