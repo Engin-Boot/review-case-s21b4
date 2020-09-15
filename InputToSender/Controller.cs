@@ -23,7 +23,8 @@ namespace InputToSender
         }
         static void _Main(string[] args)
         {
-            string filepath = Console.ReadLine();
+            //string filepath = Console.ReadLine();
+               string filepath = "https://github.com/Engin-Boot/review-case-s21b4/blob/master/InputToSender/Comments.csv'
             //string filter = args[0];
             //Console.WriteLine(filter);
             CSVInput csvInput = new CSVInput(filepath);
