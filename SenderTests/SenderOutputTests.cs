@@ -4,7 +4,7 @@ using Xunit;
 using InputToSender;
 namespace InputToSender.SenderTests
 {
-    class MockConsoleOuput : ISenderOutput
+    public class MockConsoleOuput : ISenderOutput
     {
         internal List<List<String>> OutputOnConsole = new List<List<string>>();
 
