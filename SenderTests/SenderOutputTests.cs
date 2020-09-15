@@ -23,7 +23,7 @@ namespace InputToSender.SenderTests
         }
     }
 
-    public class SenderOutputTest
+    public class SenderOutputTests
     {
         [Fact]
         public void WhenCalledWithTwoDimensionalDataThenAccessValuesRowWiseFromData()
