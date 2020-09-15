@@ -23,7 +23,7 @@ namespace InputToSender.SenderTests
         [Fact]
         public void TestExpectingProvidedCSVFileToBeReadWhenCalledWithFilePath()
         {
-            string filepath = @"TestSample.csv";
+            string filepath = "..\SenderTests\TestSample.csv";
             CSVInput csvInput = new CSVInput(filepath);
             List<List<string>> testOutput = (List<List<string>>)csvInput.ReadInput();
             Debug.Assert(testOutput[0][0] == "sampledata");
@@ -34,7 +34,7 @@ namespace InputToSender.SenderTests
         [Fact]
         public void TestExpectingExceptionWhenFileCouldNotBeFoundOrOpened()
         {
-            string filepath = @"TestSample2.csv";
+            string filepath = "TestSample2.csv";
             CSVInput csvInput = new CSVInput(filepath);
             Assert.Throws<FileNotFoundException>(() => csvInput.InputExceptionHandler());
         }
