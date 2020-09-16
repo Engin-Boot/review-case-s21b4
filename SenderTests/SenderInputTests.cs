@@ -21,9 +21,9 @@ namespace SenderTests
     public class SenderInputTests
     {
         [Fact]
-        public void TestExpectingProvidedCsvFileToBeReadWhenCalledWithFilePath()
+        public void TestExpectingNonEmptyCsvFileToBeReadWhenCalledWithFilePath()
         {
-            const string filepath = "https://github.com/Engin-Boot/review-case-s21b4/blob/master/SenderTests/TestSample.csv";
+            const string filepath = @"D:\a\review-case-s21b4\review-case-s21b4\SenderTests\TestSample.csv";
             var csvInput = new CsvInput(filepath);
             var testOutput = (List<List<string>>)csvInput.ReadInput();
             Debug.Assert(testOutput[0][0] == "sampledata");
