@@ -37,11 +37,6 @@ jobs:
     - name: Build the App
       shell: cmd
       run: call build.bat
-      
-       # Run the app
-    - name: Run the App
-      shell: cmd
-      run: call run.bat 
        
     - name: Run tests
       run: dotnet test
