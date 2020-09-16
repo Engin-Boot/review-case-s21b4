@@ -26,7 +26,7 @@ namespace InputToSender
             {
                 throw new FileNotFoundException();
             }
-            if (new FileInfo(Filepath).Length == 0)
+            if (new FileInfo(Filepath).Length == 1)
             {
                 throw new ArgumentNullException();
             }
