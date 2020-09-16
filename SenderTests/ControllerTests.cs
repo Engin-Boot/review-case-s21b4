@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Xunit;
 using InputToSender;
 
-namespace SenderTests
+namespace InputToSender.SenderTests
 {
     public class ControllerTests
     {
