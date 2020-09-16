@@ -1,19 +1,22 @@
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Xunit;
-using InputToSender;
-
-namespace SenderTests
+namespace InputToSender.SenderTests
 {
-    internal class MockConsoleOutput : ISenderOutput
+    class MockConsoleOuput : ISenderOutput
     {
-        internal List<List<string>> OutputOnConsole = new List<List<string>>();
+        internal List<List<String>> OutputOnConsole = new List<List<string>>();
 
-        public void WriteOutput(IEnumerable<IEnumerable<string>> data)
+        public void WriteOutput(IEnumerable<IEnumerable<String>> data)
         {
-            foreach (var row in data)
+            List<String> newRow;
+            foreach (IEnumerable<String> row in data)
             {
-                var newRow = row.ToList();
+                newRow = new List<string>();
+                foreach (String value in row)
+                {
+                    newRow.Add(value);
+                }
                 OutputOnConsole.Add(newRow);
             }
         }
@@ -24,7 +27,7 @@ namespace SenderTests
         [Fact]
         public void WhenCalledWithTwoDimensionalDataThenAccessValuesRowWiseFromData()
         {
-            var testInput = new List<List<string>>
+            List<List<String>> testinput = new List<List<string>>
             {
                 new List<string> { "Date", "Comment" },
                 new List<string> { "12/12/2012", "All good" },
@@ -32,17 +35,17 @@ namespace SenderTests
                 new List<string> { "30/11/2015", "Edge Cases not handled" }
             };
 
-            var mockConsoleOutput = new MockConsoleOutput();
-            mockConsoleOutput.WriteOutput(testInput);
+            MockConsoleOuput mockConsoleOuput = new MockConsoleOuput();
+            mockConsoleOuput.WriteOutput(testinput);
 
-            var testOutput = mockConsoleOutput.OutputOnConsole;
-            Assert.Equal(testInput, testOutput);
+            List<List<String>> testoutput = mockConsoleOuput.OutputOnConsole;
+            Assert.Equal(testinput, testoutput);
         }
 
         [Fact]
-        public void WhenCalledWithTwoDimensionalDataThenReturnNumberOfColumnsInData()
+        public void WhenCalledWithTwoDimensionalDataThenReturnNumberofColumnsinData()
         {
-            var testInput = new List<List<string>>
+            List<List<String>> testinput = new List<List<string>>
             {
                 new List<string> { "Date", "Comment" },
                 new List<string> { "12/12/2012", "All good" },
@@ -50,8 +53,8 @@ namespace SenderTests
                 new List<string> { "30/11/2015", "Edge Cases not handled" }
             };
 
-            var noOfColumns = ConsoleOutput.GetNumberOfColumns(testInput);
-            Assert.True(noOfColumns == 2);
+            int noofColumns = ConsoleOutput.GetNumberofColumns(testinput);
+            Assert.True(noofColumns == 2);
         }
 
     }
