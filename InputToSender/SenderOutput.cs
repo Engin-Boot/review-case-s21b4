@@ -1,58 +1,40 @@
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using Xunit;
-using InputToSender;
 
-namespace SenderTests
+namespace InputToSender
 {
-    internal class MockConsoleOutput : ISenderOutput
+    public interface ISenderOutput
     {
-        internal List<List<string>> OutputOnConsole = new List<List<string>>();
-
-        public void WriteOutput(IEnumerable<IEnumerable<string>> data)
-        {
-            foreach (var row in data)
-            {
-                var newRow = row.ToList();
-                OutputOnConsole.Add(newRow);
-            }
-        }
+        void WriteOutput(IEnumerable<IEnumerable<String>> data);
     }
 
-    public class SenderOutputTests
+    public class ConsoleOutput : ISenderOutput
     {
-        [Fact]
-        public void WhenCalledWithTwoDimensionalDataThenAccessValuesRowWiseFromData()
+        public void WriteOutput(IEnumerable<IEnumerable<String>> data)
         {
-            var testInput = new List<List<string>>
+            int noofColumns = GetNumberofColumns(data);
+            Console.WriteLine(noofColumns);
+            foreach (IEnumerable<String> row in data)
             {
-                new List<string> { "Date", "Comment" },
-                new List<string> { "12/12/2012", "All good" },
-                new List<string> { "11/11/2011", "Remove duplication" },
-                new List<string> { "30/11/2015", "Edge Cases not handled" }
-            };
-
-            var mockConsoleOutput = new MockConsoleOutput();
-            mockConsoleOutput.WriteOutput(testInput);
-
-            var testOutput = mockConsoleOutput.OutputOnConsole;
-            Assert.Equal(testInput, testOutput);
+                foreach (String value in row)
+                {
+                    Console.WriteLine(value);
+                }
+            }
         }
 
-        [Fact]
-        public void WhenCalledWithTwoDimensionalDataThenReturnNumberOfColumnsInData()
+        public static int GetNumberofColumns(IEnumerable<IEnumerable<String>> data)
         {
-            var testInput = new List<List<string>>
+            int count = 0;
+            foreach (IEnumerable<String> row in data)
             {
-                new List<string> { "Date", "Comment" },
-                new List<string> { "12/12/2012", "All good" },
-                new List<string> { "11/11/2011", "Remove duplication" },
-                new List<string> { "30/11/2015", "Edge Cases not handled" }
-            };
-
-            var noOfColumns = ConsoleOutput.GetNumberOfColumns(testInput);
-            Assert.True(noOfColumns == 2);
+                foreach (String value in row)
+                {
+                    count++;
+                }
+                break;
+            }
+            return count;
         }
-
     }
 }
