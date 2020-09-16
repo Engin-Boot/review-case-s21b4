@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using Xunit;
+using InputToSender;
 
-
-namespace InputToSender.SenderTests
+namespace SenderTests
 {
     /*public class MockInputInterface: ISenderInput
     {
@@ -21,29 +21,29 @@ namespace InputToSender.SenderTests
     public class SenderInputTests
     {
         [Fact]
-        public void TestExpectingProvidedCSVFileToBeReadWhenCalledWithFilePath()
+        public void TestExpectingProvidedCsvFileToBeReadWhenCalledWithFilePath()
         {
-            string filepath = "https://github.com/Engin-Boot/review-case-s21b4/blob/master/SenderTests/TestSample.csv";
-            CSVInput csvInput = new CSVInput(filepath);
-            List<List<string>> testOutput = (List<List<string>>)csvInput.ReadInput();
+            const string filepath = "https://github.com/Engin-Boot/review-case-s21b4/blob/master/SenderTests/TestSample.csv";
+            var csvInput = new CsvInput(filepath);
+            var testOutput = (List<List<string>>)csvInput.ReadInput();
             Debug.Assert(testOutput[0][0] == "sampledata");
-            Console.WriteLine(testOutput[0][0]);
-            Console.WriteLine("test");
         }
 
         [Fact]
         public void TestExpectingExceptionWhenFileCouldNotBeFoundOrOpened()
         {
-            string filepath = "TestSample2.csv";
-            CSVInput csvInput = new CSVInput(filepath);
+            const string filepath = "TestSample2.csv";
+            var csvInput = new CsvInput(filepath);
             Assert.Throws<FileNotFoundException>(() => csvInput.InputExceptionHandler());
         }
+        
         /*[Fact]
         public void TestExpectingNullArgumentExceptionWhenFileExistsButIsEmpty()
         {
-            string filepath = @"E:\BootCamp\Sender\InputToSender\SenderTests\EmptySample.csv";
-            CSVInput csvInput = new CSVInput(filepath);
+            const string filepath = @"C:\Users\ALIRAZA\source\repos\InputtoSender\SenderTests\EmptySample.csv";
+            var csvInput = new CsvInput(filepath);
             Assert.Throws<ArgumentNullException>(() => csvInput.InputExceptionHandler());
-        }*/
+        }
+        */
     }
 }
