@@ -23,7 +23,8 @@ namespace InputToSender
             OutputInterface.WriteOutput(parsedData);
         }
 
-        public void _Main()
+        /*
+        public void main()
         {
             //var filepath = Console.ReadLine();
             var filepath = @"D:\a\review-case-s21b4\review-case-s21b4\InputToSender\Comments.csv";
@@ -33,5 +34,6 @@ namespace InputToSender
             var parsedInput = (List<List<string>>)controller.ReadInput();
             controller.WriteOutput(parsedInput);
         }
+        */
     }
 }
