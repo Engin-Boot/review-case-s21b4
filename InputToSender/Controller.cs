@@ -1,37 +1,36 @@
-﻿using System;
 using System.Collections.Generic;
 
 namespace InputToSender
 {
     public class Controller
     {
-        public ISenderInput inputInterface;
-        public ISenderOutput outputInterface;
+        public ISenderInput InputInterface;
+        public ISenderOutput OutputInterface;
         public Controller(ISenderInput inputInterface, ISenderOutput outputInterface)
         {
-            this.inputInterface = inputInterface;
-            this.outputInterface = outputInterface;
+            this.InputInterface = inputInterface;
+            this.OutputInterface = outputInterface;
         }
+
         public IEnumerable<IEnumerable<string>> ReadInput()
         {
-            return inputInterface.ReadInput();
+            return InputInterface.ReadInput();
         }
 
         public void WriteOutput(IEnumerable<IEnumerable<string>> parsedData)
         {
-            outputInterface.WriteOutput(parsedData);
+            OutputInterface.WriteOutput(parsedData);
         }
-        static void _Main(string[] args)
+
+        /*public static void Main(string[] args)
         {
-            //string filepath = Console.ReadLine();
-               string filepath = "https://github.com/Engin-Boot/review-case-s21b4/blob/master/InputToSender/Comments.csv";
-            //string filter = args[0];
-            //Console.WriteLine(filter);
-            CSVInput csvInput = new CSVInput(filepath);
-            ConsoleOutput consoleOutput = new ConsoleOutput();
-            Controller controller = new Controller(csvInput, consoleOutput);
-            List<List<string>> parsedinput = (List<List<string>>)controller.ReadInput();
-            controller.WriteOutput(parsedinput);
-        }
+            //var filepath = Console.ReadLine();
+            var filepath = "https://github.com/Engin-Boot/review-case-s21b4/blob/master/InputToSender/Comments.csv";
+            var csvInput = new CsvInput(filepath);
+            var consoleOutput = new ConsoleOutput();
+            var controller = new Controller(csvInput, consoleOutput);
+            var parsedInput = (List<List<string>>)controller.ReadInput();
+            controller.WriteOutput(parsedInput);
+        }*/
     }
 }
