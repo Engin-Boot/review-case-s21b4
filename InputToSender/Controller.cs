@@ -14,6 +14,7 @@ namespace InputToSender
 
         public IEnumerable<IEnumerable<string>> ReadInput()
         {
+            InputInterface.InputExceptionHandler();
             return InputInterface.ReadInput();
         }
 
@@ -22,15 +23,15 @@ namespace InputToSender
             OutputInterface.WriteOutput(parsedData);
         }
 
-        /*public static void Main(string[] args)
+        public void _Main()
         {
             //var filepath = Console.ReadLine();
-            var filepath = "https://github.com/Engin-Boot/review-case-s21b4/blob/master/InputToSender/Comments.csv";
+            var filepath = @"D:\a\review-case-s21b4\review-case-s21b4\InputToSender\Comments.csv";
             var csvInput = new CsvInput(filepath);
             var consoleOutput = new ConsoleOutput();
             var controller = new Controller(csvInput, consoleOutput);
             var parsedInput = (List<List<string>>)controller.ReadInput();
             controller.WriteOutput(parsedInput);
-        }*/
+        }
     }
 }
