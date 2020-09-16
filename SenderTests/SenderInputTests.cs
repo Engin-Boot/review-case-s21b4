@@ -37,13 +37,13 @@ namespace SenderTests
             Assert.Throws<FileNotFoundException>(() => csvInput.InputExceptionHandler());
         }
         
-        /*[Fact]
+        [Fact]
         public void TestExpectingNullArgumentExceptionWhenFileExistsButIsEmpty()
         {
-            const string filepath = @"C:\Users\ALIRAZA\source\repos\InputtoSender\SenderTests\EmptySample.csv";
+            const string filepath =@"D:\a\review-case-s21b4\review-case-s21b4\SenderTests\EmptySample.csv";
             var csvInput = new CsvInput(filepath);
             Assert.Throws<ArgumentNullException>(() => csvInput.InputExceptionHandler());
         }
-        */
+        
     }
 }
