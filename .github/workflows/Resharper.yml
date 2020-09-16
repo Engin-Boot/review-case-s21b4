@@ -1,17 +1,27 @@
-name: ReSharper
-
-on:
-  pull_request: {}
-
+name: Resharper Code Analysis
+ 
+on: 
+    push:
+        branches: [master]
+ 
 jobs:
   resharper:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v2
       
-      - name: resharper
-        uses: glassechidna/resharper-action@master
-        with:
-          solution: Sender.sln
+      - name: Unofficial Resharper for GitHub
+        uses: glassechidna/resharper-action@v1
 
+      - name: Install resharper
+        run: dotnet tool install -g JetBrains.ReSharper.GlobalTools
+        
+      - name: Run resharper inspection
+        run: jb inspectcode Sender.sln /output=insreport.xml
+       
+      - name: Run resharper duplicate code check
+        run: jb dupfinder Sender.sln -o=dupreport.xml
+       
+      - name: Check Reports
+        run: powershell ./resharper.ps1
