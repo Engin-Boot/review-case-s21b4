@@ -35,7 +35,7 @@ namespace InputToSender
         public static List<List<string>> CsvData = new List<List<string>>();
         public IEnumerable<IEnumerable<string>> ReadInput()
         {
-            InputExceptionHandler();
+            //InputExceptionHandler();
             using (var reader = new StreamReader(Filepath))
             {
                 while (!reader.EndOfStream)
