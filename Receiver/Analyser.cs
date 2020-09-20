@@ -35,15 +35,15 @@ namespace Receiver
         }
 
         
-        public string GetAssociatedDatesForAWord(IEnumerable<IEnumerable<string>> data, string word)
+        private string GetAssociatedDatesForAWord(IEnumerable<IEnumerable<string>> data, string word)
         {
             List<List<string>> dataList = (List<List<string>>)data;
             string dates = "";
-            for(int i=0;i<dataList.Count;i++)
+            foreach (var t in dataList)
             {
-                var wordsInARow = (List<string>)GetSeparatedWordsBySpaceFromARow(dataList[i]);
+                var wordsInARow = (List<string>)GetSeparatedWordsBySpaceFromARow(t);
                 if (wordsInARow.Contains(word))
-                    dates += dataList[i][0] + " ";
+                    dates += t[0] + " ";
             }
             
             return dates;
@@ -56,27 +56,18 @@ namespace Receiver
             var dataList = (List<List<string>>) data;
             var originalData = dataList.Select(row => row.ToList()).ToList();
 
-            for (int i=0;i<dataList.Count;i++)
+            foreach (var row in dataList)
             {
-                dataList[i].RemoveAt(0);
-                var wordsInARow = GetSeparatedWordsBySpaceFromARow(dataList[i]);
+                row.RemoveAt(0);
+                var wordsInARow = GetSeparatedWordsBySpaceFromARow(row);
                 wordFrequency = AddWordCountInDictionary(wordFrequency, wordsInARow);
             }
 
             var wordCountList = wordFrequency.Select(item => new List<string> { item.Key, item.Value.ToString() }).ToList();
 
-            for (int i = 0; i < wordCountList.Count; i++)
+            foreach (var wordCountRow in wordCountList)
             {
-                wordCountList[i].Add(GetAssociatedDatesForAWord(originalData, wordCountList[i][0]));
-            }
-
-            for (int i = 0; i < wordCountList.Count; i++)
-            {
-                for (int j = 0; j < wordCountList[i].Count; j++)
-                {
-                    Console.Write(wordCountList[i][j] + " ");
-                }
-                Console.WriteLine();
+                wordCountRow.Add(GetAssociatedDatesForAWord(originalData, wordCountRow[0]));
             }
 
             return wordCountList;
