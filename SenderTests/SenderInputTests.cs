@@ -53,7 +53,7 @@ namespace SenderTests
         [Fact]
         public void TestExpectingNoExceptionWhenFileExists()
         {
-            string filepath = @"D:\a\DummyReviews\DummyReviews\SenderTests\TestSample.csv";
+            string filepath = @"D:\a\review-case-s21b4\review-case-s21b4\SenderTests\TestSample.csv";
             CsvInput csvInput = new CsvInput(filepath);
             Assert.True(csvInput.InputExceptionHandler());
         }
