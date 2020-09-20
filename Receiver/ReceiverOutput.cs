@@ -24,6 +24,7 @@ namespace Receiver
         public void WriteOutput(IEnumerable<IEnumerable<string>> wordFrequency)
         {
             var csv = new StringBuilder();
+            var file = new StreamWriter(_filepath, false);
             foreach (var row in wordFrequency)
             {
                 var newLine = "";
@@ -33,11 +34,11 @@ namespace Receiver
                 }
 
                 newLine = newLine.Remove(newLine.Length - 1);
-                csv.AppendLine(newLine);
+                //csv.AppendLine(newLine);
+                file.WriteLine(newLine);
                 FileOutput.Add(newLine);
             }
-
-            File.WriteAllText(_filepath, csv.ToString());
+            file.Close();
             Console.WriteLine(csv.ToString());
             OutputStatus = true;
         }
