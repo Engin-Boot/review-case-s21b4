@@ -44,9 +44,9 @@ namespace ReceiverTests
             };
             testInput.Add(tempList1);
             testInput.Add(tempList2);
-            var testOutput = testAnalyzer.CountWordFrequency(testInput);
-            Assert.True(testOutput["string1"] == 1);
-            Assert.True(testOutput["sample"] == 2);
+            var testOutput = (List<List<string>>)testAnalyzer.CountWordFrequency(testInput);
+            Assert.Equal("sample",testOutput[0][0]);
+            Assert.Equal("2",testOutput[0][1]);
         }
     }
 }
