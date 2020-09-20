@@ -31,7 +31,7 @@ namespace Receiver
             {
                 var newLine = "";
                 for(int j=0;j<wordFrequencyList[i].Count();j++){
-                    newLine += value + ",";
+                    newLine +=  wordFrequencyList[i][j]+ ",";
                }
                newLine = newLine.Remove(newLine.Length - 1);
                 file.WriteLine(newLine);
