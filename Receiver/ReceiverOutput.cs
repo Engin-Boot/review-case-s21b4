@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System;
+using System.Linq;
+
 namespace Receiver
 {
     public interface IReceiverOutput
@@ -24,12 +26,16 @@ namespace Receiver
         {
             //var csv = new StringBuilder();
             var file = new StreamWriter(_filepath, false);
-            foreach (var row in wordFrequency)
+            var wordFrequencyList = wordFrequency.ToList();
+            for(int i=0;i<wordFrequencyList.Count();i++)
             {
-                var newLine = string.Join("," , row);
-                file.WriteLine(newLine);
-                FileOutput.Add(newLine);
-                Console.WriteLine(newLine);
+                //var newLine = string.Join("," , row);
+                for(int j=0;j<wordFrequencyList[i].Count();j++){
+                    file.WriteLine(wordFrequencyList[i][j]+",");
+                    FileOutput.Add(wordFrequencyList[i][j]+",");
+                    Console.WriteLine(wordFrequencyList[i][j]+",");
+               }
+                
             }
             file.Close();
             
