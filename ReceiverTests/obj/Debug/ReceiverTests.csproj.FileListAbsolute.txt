@@ -1,0 +1,6 @@
+E:\BootCamp\ReviewOfReviews\ReceiverTests\bin\Debug\ReceiverTests.exe.config
+E:\BootCamp\ReviewOfReviews\ReceiverTests\bin\Debug\ReceiverTests.exe
+E:\BootCamp\ReviewOfReviews\ReceiverTests\bin\Debug\ReceiverTests.pdb
+E:\BootCamp\ReviewOfReviews\ReceiverTests\obj\Debug\ReceiverTests.csproj.CoreCompileInputs.cache
+E:\BootCamp\ReviewOfReviews\ReceiverTests\obj\Debug\ReceiverTests.exe
+E:\BootCamp\ReviewOfReviews\ReceiverTests\obj\Debug\ReceiverTests.pdb

@@ -1,0 +1,7 @@
+E:\BootCamp\ReviewOfReviews\Sender\bin\Debug\Sender.exe.config
+E:\BootCamp\ReviewOfReviews\Sender\bin\Debug\Sender.exe
+E:\BootCamp\ReviewOfReviews\Sender\bin\Debug\Sender.pdb
+E:\BootCamp\ReviewOfReviews\Sender\obj\Debug\Sender.csprojAssemblyReference.cache
+E:\BootCamp\ReviewOfReviews\Sender\obj\Debug\Sender.csproj.CoreCompileInputs.cache
+E:\BootCamp\ReviewOfReviews\Sender\obj\Debug\Sender.exe
+E:\BootCamp\ReviewOfReviews\Sender\obj\Debug\Sender.pdb

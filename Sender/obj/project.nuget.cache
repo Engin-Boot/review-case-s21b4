@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "fLHdIoikPIfk+c9rEuFsZ/jrAeRU9I+RW/bZCl2awDnY4ONM71yhFD++P37nA7dgIwnSdSfzMA5maZvLQJS3nw==",
+  "success": true,
+  "projectFilePath": "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\Sender\\Sender.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Aleena\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\Aleena\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\Aleena\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512",
+    "C:\\Users\\Aleena\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
