@@ -31,11 +31,12 @@ namespace Receiver
             {
                 //var newLine = string.Join("," , row);
                 for(int j=0;j<wordFrequencyList[i].Count();j++){
-                    file.WriteLine(wordFrequencyList[i][j]+",");
-                    FileOutput.Add(wordFrequencyList[i][j]+",");
-                    Console.WriteLine(wordFrequencyList[i][j]+",");
+                    newLine += value + ",";
                }
-                
+               newLine = newLine.Remove(newLine.Length - 1);
+                file.WriteLine(newLine);
+                FileOutput.Add(newLine);
+                Console.WriteLine(newLine);
             }
             file.Close();
             
