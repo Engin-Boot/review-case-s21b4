@@ -28,7 +28,8 @@ namespace Receiver
         private static void Main()
         {
             var consoleInput = new ConsoleInput();
-            var csvOutput = new CsvOutput("output.csv");
+            string filepath = @"D:\a\review-case-s21b4\review-case-s21b4\Receiver\output.csv";
+            var csvOutput = new CsvOutput(filepath);
             var controller = new Controller(consoleInput, csvOutput);
 
             var output = (List<List<string>>)controller.ReadInput();
