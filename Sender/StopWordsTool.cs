@@ -5,6 +5,13 @@ namespace Sender
 {
     public class StopWordsTool
     {
+        static char[] Delimiters = new char[]
+        {
+            ' ',
+            ',',
+            ';',
+            '.'
+        };
         #region StopWordDictionary
         static readonly Dictionary<string, bool> Stops = new Dictionary<string, bool>
         {
@@ -344,7 +351,8 @@ namespace Sender
         }
         public static string RemoveStopWordsFromSingleString(string cellValue)
         {
-            var splitCellList = (cellValue.Split(' ')).ToList();
+            var splitCellList = (cellValue.Split(Delimiters,
+            StringSplitOptions.RemoveEmptyEntries)).ToList();
             for (int k = 0; k < splitCellList.Count; k++)
             {
                 splitCellList.RemoveAll(IsStopWord);
