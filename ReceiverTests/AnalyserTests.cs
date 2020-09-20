@@ -30,23 +30,20 @@ namespace ReceiverTests
         }
 
         [Fact]
-        public void TestExpectingWordFrequencyOfAllWordsWhenCalledWithATwoDimensionalIEnumerable()
+        public void TestExpectingWordFrequencyOfAllWordsAndAssociatedDatesWhenCalledWithATwoDimensionalIEnumerable()
         {
             var testAnalyzer = new Analyzer();
             var testInput = new List<List<string>>();
-            var tempList1 = new List<string>
-            {
-                "sample string1"
-            };
-            var tempList2 = new List<string>
-            {
-                "sample string2"
-            };
+
+            var tempList1 = new List<string> {"10/10/2020", "sample string1"};
+            var tempList2 = new List<string> {"11/10/2020", "sample string2"};
+
             testInput.Add(tempList1);
             testInput.Add(tempList2);
             var testOutput = (List<List<string>>)testAnalyzer.CountWordFrequency(testInput);
             Assert.Equal("sample",testOutput[0][0]);
             Assert.Equal("2",testOutput[0][1]);
+            Assert.Equal("10/10/2020 11/10/2020 ", testOutput[0][2]);
         }
     }
 }
