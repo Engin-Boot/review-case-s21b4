@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Receiver
 {
@@ -16,23 +17,23 @@ namespace Receiver
             return separatedRow;
         }
 
-        public static IDictionary<string, int> AddWordCountInDictionary(IDictionary<string, int> wordfrequency, IEnumerable<string> wordsInRow)
+        public static IDictionary<string, int> AddWordCountInDictionary(IDictionary<string, int> wordFrequency, IEnumerable<string> wordsInRow)
         {
             foreach (var word in wordsInRow)
             {
-                if (!wordfrequency.ContainsKey(word))
+                if (!wordFrequency.ContainsKey(word))
                 {
-                    wordfrequency.Add(word, 1);
+                    wordFrequency.Add(word, 1);
                 }
                 else
                 {
-                    wordfrequency[word]++;
+                    wordFrequency[word]++;
                 }
             }
-            return wordfrequency;
+            return wordFrequency;
         }
 
-        public IDictionary<string, int> CountWordFrequency(IEnumerable<IEnumerable<string>> data)
+        public IEnumerable<IEnumerable<string>> CountWordFrequency(IEnumerable<IEnumerable<string>> data)
         {
             IDictionary<string, int> wordFrequency = new Dictionary<string, int>();
 
@@ -41,9 +42,13 @@ namespace Receiver
                 var wordsInARow = GetSeparatedWordsBySpaceFromARow(row);
                 wordFrequency = AddWordCountInDictionary(wordFrequency, wordsInARow);
             }
-            return wordFrequency;
+
+            var wordCountList = wordFrequency.Select(item => new List<string> { item.Key, item.Value.ToString() }).ToList();
+
+            return wordCountList;
 
         }
     }
+
 
 }
