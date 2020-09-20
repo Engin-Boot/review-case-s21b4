@@ -32,7 +32,7 @@ namespace Sender
             StopWordsTool stopWordsTool = new StopWordsTool();
             Controller controller = new Controller(csvInput, consoleOutput);
             List<List<string>> parsedinput = (List<List<string>>)controller.ReadInput();
-            var filteredInput = (List<List<string>>)filter.GetDataFilteredByColumnNos(parsedinput, new List<int> { 1 });
+            var filteredInput = (List<List<string>>)filter.GetDataFilteredByColumnNos(parsedinput, new List<int> { 0, 1 });
             var parsedData = stopWordsTool.RemoveStopWords(filteredInput);
             controller.WriteOutput(parsedData);
         }
