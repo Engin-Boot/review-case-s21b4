@@ -11,7 +11,7 @@ namespace ReceiverTests
         public void TestExpectingCorrectAssignmentToControllersDataMembersWhenCalledWithValidObjects()
         {
             MockConsoleInput mockConsoleInput = new MockConsoleInput("3", "3");
-            string filepath = @"D:\a\DummyReviews\DummyReviews\ReceiverTests\output.csv";
+            string filepath =  @"D:\a\review-case-s21b4\review-case-s21b4\ReceiverTests\output.csv";
             CsvOutput csvOutput = new CsvOutput(filepath);
             Controller controller = new Controller(mockConsoleInput, csvOutput);
             Assert.Equal(mockConsoleInput, controller.InputInterface);
