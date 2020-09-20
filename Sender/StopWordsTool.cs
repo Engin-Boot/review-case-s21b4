@@ -5,7 +5,7 @@ namespace Sender
 {
     public class StopWordsTool
     {
-        static char[] Delimiters = new char[]
+        static readonly char[] Delimiters = new char[]
         {
             ' ',
             ',',
