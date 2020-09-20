@@ -25,7 +25,7 @@ namespace Sender
         [ExcludeFromCodeCoverage]
         static void Main()
         {
-            string filepath = @"D:\a\DummyReviews\DummyReviews\Sender\Comments.csv";
+            string filepath = @"D:\a\review-case-s21b4\review-case-s21b4\Sender\Comments.csv";
             CsvInput csvInput = new CsvInput(filepath);
             ConsoleOutput consoleOutput = new ConsoleOutput();
             Filter filter = new Filter();
