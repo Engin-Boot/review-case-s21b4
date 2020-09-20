@@ -27,13 +27,14 @@ namespace Receiver
             //var csv = new StringBuilder();
             var file = new StreamWriter(_filepath, false);
             var wordFrequencyList = (List<List<string>>)wordFrequency;
-            for(int i=0;i<wordFrequencyList.Count();i++)
+            for(int i=0;i<wordFrequencyList.Count;i++)
             {
                 var newLine = "";
-                for(int j=0;j<wordFrequencyList[i].Count();j++){
+                for(int j=0;j<wordFrequencyList[i].Count;j++)
+                {
                     newLine +=  wordFrequencyList[i][j]+ ",";
-               }
-               newLine = newLine.Remove(newLine.Length - 1);
+                }
+                newLine = newLine.Remove(newLine.Length - 1);
                 file.WriteLine(newLine);
                 FileOutput.Add(newLine);
                 Console.WriteLine(newLine);
