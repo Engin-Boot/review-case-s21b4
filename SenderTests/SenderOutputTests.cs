@@ -1,33 +1,29 @@
-﻿using System;
 using System.Collections.Generic;
 using Xunit;
-namespace InputToSender.SenderTests
-{
-    class MockConsoleOuput : ISenderOutput
-    {
-        internal List<List<String>> OutputOnConsole = new List<List<string>>();
+using Sender;
 
-        public void WriteOutput(IEnumerable<IEnumerable<String>> data)
+namespace SenderTests
+{
+
+    /*public class MockConsoleOutput : ISenderOutput
+    {
+        public List<List<string>> OutputOnConsole = new List<List<string>>();
+        public int NRows, NColumns;
+        public void WriteOutput(IEnumerable<IEnumerable<string>> data)
         {
-            List<String> newRow;
-            foreach (IEnumerable<String> row in data)
+            var dataList = data.ToList();
+            NRows = ConsoleOutput.GetNumberOfRows(dataList);
+            NColumns = ConsoleOutput.GetNumberOfColumns(dataList);
+            foreach (var newRow in dataList.Select(row => row.ToList()))
             {
-                newRow = new List<string>();
-                foreach (String value in row)
-                {
-                    newRow.Add(value);
-                }
                 OutputOnConsole.Add(newRow);
             }
         }
-    }
+    }*/
 
     public class SenderOutputTests
     {
-        [Fact]
-        public void WhenCalledWithTwoDimensionalDataThenAccessValuesRowWiseFromData()
-        {
-            List<List<String>> testinput = new List<List<string>>
+        private readonly List<List<string>> _testInput = new List<List<string>>
             {
                 new List<string> { "Date", "Comment" },
                 new List<string> { "12/12/2012", "All good" },
@@ -35,26 +31,34 @@ namespace InputToSender.SenderTests
                 new List<string> { "30/11/2015", "Edge Cases not handled" }
             };
 
-            MockConsoleOuput mockConsoleOuput = new MockConsoleOuput();
-            mockConsoleOuput.WriteOutput(testinput);
+        [Fact]
+        public void WhenCalledWithTwoDimensionalIEnumerableThenGiveProperRowAndColumnCountAndAccessValuesRowWiseFromData()
+        {
 
-            List<List<String>> testoutput = mockConsoleOuput.OutputOnConsole;
-            Assert.Equal(testinput, testoutput);
+            var consoleOutput = new ConsoleOutput();
+            consoleOutput.WriteOutput(_testInput);
+
+            var testOutput = consoleOutput.OutputData;
+            Assert.Equal(4, consoleOutput.NRows);
+            Assert.Equal(2, consoleOutput.NColumns);
+            Assert.Equal("Date", testOutput[0]);
+            Assert.Equal("12/12/2012", testOutput[2]);
+            Assert.Equal("Edge Cases not handled", testOutput[7]);
+
         }
 
         [Fact]
-        public void WhenCalledWithTwoDimensionalDataThenReturnNumberofColumnsinData()
+        public void WhenCalledWithTwoDimensionalDataThenReturnNumberOfColumnsInData()
         {
-            List<List<String>> testinput = new List<List<string>>
-            {
-                new List<string> { "Date", "Comment" },
-                new List<string> { "12/12/2012", "All good" },
-                new List<string> { "11/11/2011", "Remove duplication" },
-                new List<string> { "30/11/2015", "Edge Cases not handled" }
-            };
+            var nColumns = ConsoleOutput.GetNumberOfColumns(_testInput);
+            Assert.True(nColumns == 2);
+        }
 
-            int noofColumns = ConsoleOutput.GetNumberofColumns(testinput);
-            Assert.True(noofColumns == 2);
+        [Fact]
+        public void WhenCalledWithTwoDimensionalDataThenReturnNumberOfRowsInData()
+        {
+            var nRows = ConsoleOutput.GetNumberOfRows(_testInput);
+            Assert.True(nRows == 4);
         }
 
     }

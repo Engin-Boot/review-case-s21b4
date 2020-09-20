@@ -1,15 +1,15 @@
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using Xunit;
-using InputToSender;
+using Sender;
 
 namespace SenderTests
 {
     /*public class MockInputInterface: ISenderInput
     {
-        public IEnumerable<IEnumerable<string>> ReadInput(string filepath)
+        public IEnumerable<IEnumerable<string>> ReadInput(string Filepath)
         {
             List < List<string> >  MockInput= new List<List<string>>();
             List<string> row = new List<string>();
@@ -21,29 +21,49 @@ namespace SenderTests
     public class SenderInputTests
     {
         [Fact]
-        public void TestExpectingNonEmptyCsvFileToBeReadWhenCalledWithFilePath()
+        public void TestExpectingValidFilepathAssignmentToClassMemberWhenCalledWithValidFilepath()
         {
-            const string filepath = @"D:\a\review-case-s21b4\review-case-s21b4\SenderTests\TestSample.csv";
-            var csvInput = new CsvInput(filepath);
-            var testOutput = (List<List<string>>)csvInput.ReadInput();
+            string filepath = @"EmptySample.csv";
+            CsvInput csvInput = new CsvInput(filepath);
+            Assert.Equal("EmptySample.csv", csvInput.Filepath);
+        }
+        [Fact]
+        public void TestExpectingCsvFileToBeReadWhenCalledWithFilePath()
+        {
+            string filepath = @"D:\a\DummyReviews\DummyReviews\SenderTests\TestSample.csv";
+            CsvInput csvInput = new CsvInput(filepath);
+            List<List<string>> testOutput = (List<List<string>>)csvInput.ReadInput();
             Debug.Assert(testOutput[0][0] == "sampledata");
         }
-
+        [Fact]
+        public void TestExpectingOutputToBeEmptyWhenCalledWithFilePathWhereFileIsEmpty()
+        {
+            string filepath = @"D:\a\DummyReviews\DummyReviews\SenderTests\EmptySample.csv";
+            CsvInput csvInput = new CsvInput(filepath);
+            List<List<string>> testOutput = (List<List<string>>)csvInput.ReadInput();
+            Assert.True(testOutput.Count==0);
+        }
         [Fact]
         public void TestExpectingExceptionWhenFileCouldNotBeFoundOrOpened()
         {
-            const string filepath = "TestSample2.csv";
-            var csvInput = new CsvInput(filepath);
+            string filepath = @"D:\a\DummyReviews\DummyReviews\SenderTests\TestSample2.csv";
+            CsvInput csvInput = new CsvInput(filepath);
             Assert.Throws<FileNotFoundException>(() => csvInput.InputExceptionHandler());
         }
-        
-        /*[Fact]
-        public void TestExpectingNullArgumentExceptionWhenFileExistsButIsEmpty()
+        [Fact]
+        public void TestExpectingNoExceptionWhenFileExists()
         {
-            const string filepath =@"D:\a\review-case-s21b4\review-case-s21b4\SenderTests\EmptySample.csv";
-            var csvInput = new CsvInput(filepath);
-            Assert.Throws<ArgumentNullException>(() => csvInput.InputExceptionHandler());
+            string filepath = @"D:\a\DummyReviews\DummyReviews\SenderTests\TestSample.csv";
+            CsvInput csvInput = new CsvInput(filepath);
+            Assert.True(csvInput.InputExceptionHandler());
         }
-        */
+        [Fact]
+        public void TestExpectingEmptyLineToBeIgnoredFromInputWhenCalled()
+        {
+            string filepath = @"D:\a\DummyReviews\DummyReviews\SenderTests\EmptyLineSample.csv";
+            CsvInput csvInput = new CsvInput(filepath);
+            var output = csvInput.ReadInput();
+            Assert.True(output.Count()==4);
+        }
     }
 }

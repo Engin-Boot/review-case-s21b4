@@ -1,20 +1,42 @@
-using System.Diagnostics;
+using System.Collections.Generic;
+using Sender;
 using Xunit;
-using InputToSender;
 
-namespace InputToSender.SenderTests
+namespace SenderTests
 {
     public class ControllerTests
     {
+        const string Filepath = @"D:\a\DummyReviews\DummyReviews\SenderTests\TestSample.csv";
+        readonly CsvInput _csvInput = new CsvInput(Filepath);
+        readonly ConsoleOutput _consoleOutput = new ConsoleOutput();
+        Controller _controller;
+
+
         [Fact]
-        public static void TestExpectingAnObjectOfCsvInputTypeToBeAssignedToControllersInputInterface()
+        public void TestExpectingAnObjectOfCsvInputTypeToBeAssignedToControllersInputInterface()
+        {
+            _controller = new Controller(_csvInput, _consoleOutput);
+            Assert.Equal(_csvInput, _controller.InputInterface);
+            Assert.Equal(_consoleOutput, _controller.OutputInterface);
+        }
+
+
+        [Fact]
+        public void TestExpectingAppropriateWriteOutputMethodToBeCalledWhenCalledWithTwoDimensionalIEnumerable()
         {
 
-            var csvInput = new CsvInput("TestSample.csv");
-            var output = new ConsoleOutput();
-            var controller = new Controller(csvInput, output);
-            var type = controller.InputInterface.GetType();
-            Debug.Assert(type == csvInput.GetType());
+            _controller = new Controller(_csvInput, _consoleOutput);
+            List<List<string>> parsedInput = (List<List<string>>)_controller.ReadInput();
+            _controller.WriteOutput(parsedInput);
+            Assert.Equal("sampledata", _consoleOutput.OutputData[0]);
+
+        }
+        [Fact]
+        public void TestExpectingAppropriateReadInputMethodToBeCalledWhenCalled()
+        {
+            _controller = new Controller(_csvInput, _consoleOutput);
+            List<List<string>> parsedInput = (List<List<string>>)_controller.ReadInput();
+            Assert.Equal("sampledata", parsedInput[0][0]);
         }
     }
 }
