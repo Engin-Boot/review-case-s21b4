@@ -24,7 +24,7 @@ namespace Receiver
         {
             //var csv = new StringBuilder();
             var file = new StreamWriter(_filepath, false);
-            foreach (List<string> row in wordFrequency)
+            foreach (var row in wordFrequency)
             {
                 var newLine = string.Join("," , row);
                 file.WriteLine(newLine);
