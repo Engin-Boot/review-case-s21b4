@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System;
-using System.Linq;
 
 namespace Receiver
 {
@@ -27,12 +26,12 @@ namespace Receiver
             //var csv = new StringBuilder();
             var file = new StreamWriter(_filepath, false);
             var wordFrequencyList = (List<List<string>>)wordFrequency;
-            for(int i=0;i<wordFrequencyList.Count;i++)
+            foreach(var row in wordFrequencyList)
             {
                 var newLine = "";
-                for(int j=0;j<wordFrequencyList[i].Count;j++)
+                for(int j=0;j<row.Count;j++)
                 {
-                    newLine +=  wordFrequencyList[i][j]+ ",";
+                    newLine +=  row[j]+ ",";
                 }
                 newLine = newLine.Remove(newLine.Length - 1);
                 file.WriteLine(newLine);
