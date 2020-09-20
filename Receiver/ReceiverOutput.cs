@@ -38,6 +38,7 @@ namespace Receiver
             }
 
             File.WriteAllText(_filepath, csv.ToString());
+            Console.WriteLine(csv.ToString());
             OutputStatus = true;
         }
     }
