@@ -29,12 +29,13 @@ namespace Receiver
             foreach(var row in wordFrequencyList)
             {
                 var newLine = "";
-                for(int j=0;j<row.Count;j++)
+                foreach(var cell in row)
                 {
-                    newLine +=  row[j]+ ",";
+                    newLine +=  cell+ ",";
+                    file.WriteLine(cell+",");
                 }
                 newLine = newLine.Remove(newLine.Length - 1);
-                file.WriteLine(newLine);
+                
                 FileOutput.Add(newLine);
                 Console.WriteLine(newLine);
             }
