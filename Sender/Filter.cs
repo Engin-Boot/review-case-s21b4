@@ -19,6 +19,8 @@ namespace Sender
             var outputData = new List<List<string>>();
 
             var columnNosList = columnNos.ToList();
+            if(!columnNosList.Contains(0))
+                columnNosList.Insert(0,0);
 
             foreach (var row in data)
             {
