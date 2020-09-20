@@ -6,7 +6,7 @@ namespace SenderTests
 {
     public class ControllerTests
     {
-        const string Filepath = @"D:\a\DummyReviews\DummyReviews\SenderTests\TestSample.csv";
+        const string Filepath = @"D:\a\review-case-s21b4\review-case-s21b4\SenderTests\TestSample.csv";
         readonly CsvInput _csvInput = new CsvInput(Filepath);
         readonly ConsoleOutput _consoleOutput = new ConsoleOutput();
         Controller _controller;
