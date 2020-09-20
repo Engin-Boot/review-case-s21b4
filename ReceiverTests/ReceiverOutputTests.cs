@@ -32,7 +32,7 @@ namespace ReceiverTests
         [Fact]
         public void TestExpectingStatusOfFileWrittenAsTrueWhenCalledWithDictionaryOfWordFrequency()
         {
-            CsvOutput csvOutput = new CsvOutput("Random_file_path");
+            CsvOutput csvOutput = new CsvOutput(@"D:\a\review-case-s21b4\review-case-s21b4\ReceiverTests\StatusOutput.csv");
             List<List<string>> testInput = new List<List<string>>
             {
                 new List<string> {"sample1", "1"}, new List<string> {"sample2", "1"}
@@ -45,7 +45,7 @@ namespace ReceiverTests
         [Fact]
         public void TestExpectingValidMockFileOutputWhenCalledWithDictionaryOfWordFrequency()
         {
-            CsvOutput mockOutput = new CsvOutput("Random_file_path");
+            CsvOutput mockOutput = new CsvOutput(@"D:\a\review-case-s21b4\review-case-s21b4\ReceiverTests\WordCountOutput.csv");
             List<List<string>> testInput = new List<List<string>>
             {
                 new List<string> {"sample1", "1"}, new List<string> {"sample2", "2"}
@@ -57,7 +57,7 @@ namespace ReceiverTests
         [Fact]
         public void TestExpectingFileOutputToBeEmptyWhenCalledWithEmptyIDictionary()
         {
-            CsvOutput mockOutput = new CsvOutput("Random_file_path");
+            CsvOutput mockOutput = new CsvOutput(@"D:\a\review-case-s21b4\review-case-s21b4\ReceiverTests\EmptyOutput.csv");
             mockOutput.WriteOutput(new List<List<string>>());
             Assert.True(mockOutput.FileOutput.Count == 0);
         }
