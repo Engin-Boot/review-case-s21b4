@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 
 namespace Receiver
 {
@@ -30,7 +29,7 @@ namespace Receiver
         private static void Main()
         {
             var consoleInput = new ConsoleInput();
-            var filepath =  @"D:\a\review-case-s21b4\review-case-s21b4\Receiver\output.csv";
+            var filepath = @"D:\a\DummyReviews\DummyReviews\Receiver\output.csv";
             var csvOutput = new CsvOutput(filepath);
             var controller = new Controller(consoleInput, csvOutput);
 
@@ -40,9 +39,7 @@ namespace Receiver
             var commentAnalyzer = new Analyzer();
             var wordCount = commentAnalyzer.CountWordFrequency(output);
 
-            var wordCountList = wordCount.Select(item => new List<string> { item.Key, item.Value.ToString() }).ToList();
-
-            controller.WriteOutput(wordCountList);
+            controller.WriteOutput(wordCount);
         }
     }
 }
