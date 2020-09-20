@@ -29,7 +29,7 @@ namespace Receiver
             var wordFrequencyList = (List<List<string>>)wordFrequency;
             for(int i=0;i<wordFrequencyList.Count();i++)
             {
-                //var newLine = string.Join("," , row);
+                var newLine = "";
                 for(int j=0;j<wordFrequencyList[i].Count();j++){
                     newLine += value + ",";
                }
