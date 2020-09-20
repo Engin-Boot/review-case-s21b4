@@ -30,7 +30,7 @@ namespace SenderTests
         [Fact]
         public void TestExpectingCsvFileToBeReadWhenCalledWithFilePath()
         {
-            string filepath = @"D:\a\DummyReviews\DummyReviews\SenderTests\TestSample.csv";
+            string filepath =  @"D:\a\review-case-s21b4\review-case-s21b4\SenderTests\TestSample.csv";
             CsvInput csvInput = new CsvInput(filepath);
             List<List<string>> testOutput = (List<List<string>>)csvInput.ReadInput();
             Debug.Assert(testOutput[0][0] == "sampledata");
@@ -38,7 +38,7 @@ namespace SenderTests
         [Fact]
         public void TestExpectingOutputToBeEmptyWhenCalledWithFilePathWhereFileIsEmpty()
         {
-            string filepath = @"D:\a\DummyReviews\DummyReviews\SenderTests\EmptySample.csv";
+            string filepath =  @"D:\a\review-case-s21b4\review-case-s21b4\SenderTests\EmptySample.csv";
             CsvInput csvInput = new CsvInput(filepath);
             List<List<string>> testOutput = (List<List<string>>)csvInput.ReadInput();
             Assert.True(testOutput.Count==0);
@@ -46,7 +46,7 @@ namespace SenderTests
         [Fact]
         public void TestExpectingExceptionWhenFileCouldNotBeFoundOrOpened()
         {
-            string filepath = @"D:\a\DummyReviews\DummyReviews\SenderTests\TestSample2.csv";
+            string filepath =  @"D:\a\review-case-s21b4\review-case-s21b4\SenderTests\TestSample2.csv";
             CsvInput csvInput = new CsvInput(filepath);
             Assert.Throws<FileNotFoundException>(() => csvInput.InputExceptionHandler());
         }
@@ -60,7 +60,7 @@ namespace SenderTests
         [Fact]
         public void TestExpectingEmptyLineToBeIgnoredFromInputWhenCalled()
         {
-            string filepath = @"D:\a\DummyReviews\DummyReviews\SenderTests\EmptyLineSample.csv";
+            string filepath =  @"D:\a\review-case-s21b4\review-case-s21b4\SenderTests\EmptyLineSample.csv";
             CsvInput csvInput = new CsvInput(filepath);
             var output = csvInput.ReadInput();
             Assert.True(output.Count()==4);
