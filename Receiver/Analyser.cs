@@ -53,6 +53,7 @@ namespace Receiver
             IDictionary<string, int> wordFrequency = new Dictionary<string, int>();
 
             var dataList = (List<List<string>>) data;
+            dataList.RemoveAt(0);
             var originalData = dataList.Select(row => row.ToList()).ToList();
 
             foreach (var row in dataList)
