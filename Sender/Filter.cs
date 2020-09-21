@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace Sender
 {
     public class Filter
     {
-        private IEnumerable<string> GetFilteredRowByColumnNos(IEnumerable<string> row, IEnumerable<int> columnNos)
+        private static IEnumerable<string> GetFilteredRowByColumnNos(IEnumerable<string> row, IEnumerable<int> columnNos)
         {
             var rowList = (List<string>) row;
             var columnNosList = columnNos.ToList();
