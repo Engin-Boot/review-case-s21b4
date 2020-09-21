@@ -14,8 +14,8 @@ namespace SenderTests
         [Fact]
         public void TestExpectingDataFilteredByColumnNosWhenCalledWithTwoDimensionalDataAndColumnNos()
         {
-
-            var testOutput = (List<List<string>>)Filter.GetDataFilteredByColumns(testInput, new List<int> { 1, 2 });
+            Filter filter = new Filter();
+            var testOutput = (List<List<string>>)filter.GetDataFilteredByColumns(testInput, new List<int> { 1, 2 });
             Assert.Equal("column2", testOutput[0][0]);
             Assert.Equal("column3", testOutput[0][1]);
             Assert.Equal("c2data", testOutput[1][0]);
@@ -27,8 +27,8 @@ namespace SenderTests
         public void TestExpectingDataFilteredByColumnRangeWhenCalledWithTwoDimensionalDataAndStartColAndEndCol()
         {
             
-
-            var testOutput = (List<List<string>>)Filter.GetDataFilteredByColumns(testInput, 0, 2);
+            Filter filter = new Filter();
+            var testOutput = (List<List<string>>)filter.GetDataFilteredByColumns(testInput, 0, 2);
             Assert.Equal("column1", testOutput[0][0]);
             Assert.Equal("column3", testOutput[0][2]);
             Assert.Equal("c1data", testOutput[1][0]);
@@ -37,8 +37,9 @@ namespace SenderTests
         [Fact]
         public void TestExpectingIndexOutOfRangeExceptionWhenColumnNumberIsOutOfRange()
         {
-            Assert.Throws<IndexOutOfRangeException>(() => Filter.GetDataFilteredByColumns(testInput, 0, 5));
-            Assert.Throws<IndexOutOfRangeException>(() => Filter.GetDataFilteredByColumns(testInput, new List<int> { 0, 5}));
+            Filter filter = new Filter();
+            Assert.Throws<IndexOutOfRangeException>(() => filter.GetDataFilteredByColumns(testInput, 0, 5));
+            Assert.Throws<IndexOutOfRangeException>(() => filter.GetDataFilteredByColumns(testInput, new List<int> { 0, 5}));
 
         }
     }
