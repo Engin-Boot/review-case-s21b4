@@ -22,7 +22,7 @@ namespace ReceiverTests
         public void TestExpectingAppropriateReadInputMethodToBeCalled()
         {
             MockConsoleInput mockConsoleInput = new MockConsoleInput("3", "3");
-            string filepath = "same_random_path";
+            string filepath =  @"D:\a\review-case-s21b4\review-case-s21b4\ReceiverTests\output.csv";
             CsvOutput output = new CsvOutput(filepath);
             Controller controller = new Controller(mockConsoleInput, output);
             var outputRead = (List<List<string>>)controller.ReadInput();
@@ -33,7 +33,7 @@ namespace ReceiverTests
         public void TestExpectingAppropriateWriteOutputMethodToBeCalledWhenCalledWithValidIDictionary()
         {
             MockConsoleInput mockInput = new MockConsoleInput("3", "3");
-            string filepath = "same_random_path";
+            string filepath =  @"D:\a\review-case-s21b4\review-case-s21b4\ReceiverTests\output.csv";
             CsvOutput output = new CsvOutput(filepath);
             Controller controller = new Controller(mockInput, output);
             List<List<string>> testInput = new List<List<string>>
