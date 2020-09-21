@@ -65,5 +65,14 @@ namespace SenderTests
             var output = csvInput.ReadInput();
             Assert.True(output.Count()==4);
         }
+        [Fact]
+        public void TestExpectingEveryEntryInOutputToBeEmptyWhenCalledWithFilePathWhereFileContainsOnlyCommas()
+        {
+            string filepath = @"D:\a\review-case-s21b4\review-case-s21b4\SenderTests\OnlyCommasSample.csv";
+            CsvInput csvInput = new CsvInput(filepath);
+            List<List<string>> testOutput = (List<List<string>>)csvInput.ReadInput();
+            Assert.True(string.IsNullOrEmpty(testOutput[0][0]));
+            Assert.True(string.IsNullOrEmpty(testOutput[0][1]));
+        }
     }
 }
