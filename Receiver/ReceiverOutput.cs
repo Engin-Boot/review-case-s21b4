@@ -23,7 +23,6 @@ namespace Receiver
 
         public void WriteOutput(IEnumerable<IEnumerable<string>> wordFrequency)
         {
-            //var csv = new StringBuilder();
             var file = new StreamWriter(_filepath, false);
             var wordFrequencyList = (List<List<string>>)wordFrequency;
             foreach(var row in wordFrequencyList)
@@ -32,12 +31,11 @@ namespace Receiver
                 foreach(var cell in row)
                 {
                     newLine +=  cell+ ",";
-                    file.WriteLine(cell+",");
                 }
                 newLine = newLine.Remove(newLine.Length - 1);
-                
+                file.WriteLine(newLine);
                 FileOutput.Add(newLine);
-                Console.WriteLine(newLine);
+          
             }
             file.Close();
             
