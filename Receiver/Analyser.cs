@@ -34,19 +34,20 @@ namespace Receiver
         }
 
         
-        private string GetAssociatedDatesForAWord(IEnumerable<IEnumerable<string>> data, string word)
+        private string GetAssociatedInformationForAWord(IEnumerable<IEnumerable<string>> data, string word, int columnNo)
         {
             List<List<string>> dataList = (List<List<string>>)data;
-            string dates = "";
+            string additionalInfo = "";
             foreach (var t in dataList)
             {
                 var wordsInARow = (List<string>)GetSeparatedWordsBySpaceFromARow(t);
                 if (wordsInARow.Contains(word))
-                    dates += t[0] + " ";
+                    additionalInfo += t[columnNo] + " ";
             }
             
-            return dates;
+            return additionalInfo;
         }
+
 
         public IEnumerable<IEnumerable<string>> CountWordFrequency(IEnumerable<IEnumerable<string>> data)
         {
@@ -54,6 +55,7 @@ namespace Receiver
 
             var dataList = (List<List<string>>) data;
             dataList.RemoveAt(0);
+
             var originalData = dataList.Select(row => row.ToList()).ToList();
 
             foreach (var row in dataList)
@@ -67,7 +69,7 @@ namespace Receiver
 
             foreach (var wordCountRow in wordCountList)
             {
-                wordCountRow.Add(GetAssociatedDatesForAWord(originalData, wordCountRow[0]));
+                wordCountRow.Add(GetAssociatedInformationForAWord(originalData, wordCountRow[0],0));
             }
 
             return wordCountList;
@@ -75,5 +77,6 @@ namespace Receiver
         }
 
     }
+
 
 }
