@@ -12,15 +12,21 @@ namespace Sender
 
             return rowList.Where((value, i) => columnNosList.Contains(i)).ToList();
         }
-
-        public IEnumerable<IEnumerable<string>> GetDataFilteredByColumnNos
+        private static void CheckIndexInRange(int expected,int actual)
+        {
+            if (actual >= expected)
+            {
+                throw new IndexOutOfRangeException();
+            }
+        }
+        public static IEnumerable<IEnumerable<string>> GetDataFilteredByColumns
             (IEnumerable<IEnumerable<string>> data, IEnumerable<int> columnNos)
         {
+            int nColumns = ConsoleOutput.GetNumberOfColumns(data);
+            CheckIndexInRange(nColumns, columnNos.Max());
             var outputData = new List<List<string>>();
 
             var columnNosList = columnNos.ToList();
-            //if(!columnNosList.Contains(0))
-              //  columnNosList.Insert(0,0);
 
             foreach (var row in data)
             {
@@ -31,10 +37,12 @@ namespace Sender
             return outputData;
         }
 
-        public IEnumerable<IEnumerable<string>> GetDataFilteredByColumnRange
+        public static IEnumerable<IEnumerable<string>> GetDataFilteredByColumns
             (IEnumerable<IEnumerable<string>> data, int startCol, int endCol)
         {
-            var inputData = (List<List<string>>) data;
+            int nColumns = ConsoleOutput.GetNumberOfColumns(data);
+            CheckIndexInRange(nColumns, endCol);
+            var inputData = (List<List<string>>)data;
             var outputData = new List<List<string>>();
             foreach (var row in inputData)
             {
