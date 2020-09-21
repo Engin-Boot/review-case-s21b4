@@ -15,7 +15,7 @@ namespace Sender
         }
         private static void CheckIndexInRange(int expected,int actual)
         {
-            if (actual >= expected)
+            if (int.Parse(nameof(actual)) >= int.Parse((nameof(expected))))
             {
                 throw new IndexOutOfRangeException();
             }
