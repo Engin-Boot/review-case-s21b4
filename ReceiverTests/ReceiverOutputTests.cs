@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Xunit;
 using Receiver;
@@ -32,7 +33,7 @@ namespace ReceiverTests
         [Fact]
         public void TestExpectingStatusOfFileWrittenAsTrueWhenCalledWithDictionaryOfWordFrequency()
         {
-            CsvOutput csvOutput = new CsvOutput(@"D:\a\review-case-s21b4\review-case-s21b4\ReceiverTests\StatusOutput.csv");
+            CsvOutput csvOutput = new CsvOutput("Random_file_path");
             List<List<string>> testInput = new List<List<string>>
             {
                 new List<string> {"sample1", "1"}, new List<string> {"sample2", "1"}
@@ -45,7 +46,7 @@ namespace ReceiverTests
         [Fact]
         public void TestExpectingValidMockFileOutputWhenCalledWithDictionaryOfWordFrequency()
         {
-            CsvOutput mockOutput = new CsvOutput(@"D:\a\review-case-s21b4\review-case-s21b4\ReceiverTests\WordCountOutput.csv");
+            CsvOutput mockOutput = new CsvOutput("Random_file_path");
             List<List<string>> testInput = new List<List<string>>
             {
                 new List<string> {"sample1", "1"}, new List<string> {"sample2", "2"}
@@ -57,9 +58,24 @@ namespace ReceiverTests
         [Fact]
         public void TestExpectingFileOutputToBeEmptyWhenCalledWithEmptyIDictionary()
         {
-            CsvOutput mockOutput = new CsvOutput(@"D:\a\review-case-s21b4\review-case-s21b4\ReceiverTests\EmptyOutput.csv");
+            CsvOutput mockOutput = new CsvOutput("Random_file_path");
             mockOutput.WriteOutput(new List<List<string>>());
             Assert.True(mockOutput.FileOutput.Count == 0);
+        }
+
+        [Fact]
+        public void TestExpectingArgumentExceptionWhenFileFormatIsInvalid()
+        {
+            Assert.Throws<ArgumentException>(() => new CsvOutput("output.doc"));
+        }
+
+        [Fact]
+        public void TestExpectingNoExceptionWhenFileFormatIsValid()
+        {
+            CsvOutput object1 = new CsvOutput("output.csv");
+            Assert.False(object1.OutputStatus);
+            object1 = new CsvOutput("output.xlsx");
+            Assert.False(object1.OutputStatus);
         }
     }
 }
