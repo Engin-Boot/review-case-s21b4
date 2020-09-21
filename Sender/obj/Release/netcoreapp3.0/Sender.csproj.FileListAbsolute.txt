@@ -1,0 +1,12 @@
+D:\a\review-case-s21b4\review-case-s21b4\Sender\bin\Release\netcoreapp3.0\Sender.exe
+D:\a\review-case-s21b4\review-case-s21b4\Sender\bin\Release\netcoreapp3.0\Sender.dll.config
+D:\a\review-case-s21b4\review-case-s21b4\Sender\bin\Release\netcoreapp3.0\Sender.deps.json
+D:\a\review-case-s21b4\review-case-s21b4\Sender\bin\Release\netcoreapp3.0\Sender.runtimeconfig.json
+D:\a\review-case-s21b4\review-case-s21b4\Sender\bin\Release\netcoreapp3.0\Sender.runtimeconfig.dev.json
+D:\a\review-case-s21b4\review-case-s21b4\Sender\bin\Release\netcoreapp3.0\Sender.dll
+D:\a\review-case-s21b4\review-case-s21b4\Sender\bin\Release\netcoreapp3.0\Sender.pdb
+D:\a\review-case-s21b4\review-case-s21b4\Sender\obj\Release\netcoreapp3.0\Sender.csprojAssemblyReference.cache
+D:\a\review-case-s21b4\review-case-s21b4\Sender\obj\Release\netcoreapp3.0\Sender.AssemblyInfoInputs.cache
+D:\a\review-case-s21b4\review-case-s21b4\Sender\obj\Release\netcoreapp3.0\Sender.AssemblyInfo.cs
+D:\a\review-case-s21b4\review-case-s21b4\Sender\obj\Release\netcoreapp3.0\Sender.dll
+D:\a\review-case-s21b4\review-case-s21b4\Sender\obj\Release\netcoreapp3.0\Sender.pdb

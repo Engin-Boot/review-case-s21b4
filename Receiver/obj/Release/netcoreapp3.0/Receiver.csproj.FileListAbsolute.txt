@@ -1,0 +1,12 @@
+D:\a\review-case-s21b4\review-case-s21b4\Receiver\bin\Release\netcoreapp3.0\Receiver.exe
+D:\a\review-case-s21b4\review-case-s21b4\Receiver\bin\Release\netcoreapp3.0\Receiver.dll.config
+D:\a\review-case-s21b4\review-case-s21b4\Receiver\bin\Release\netcoreapp3.0\Receiver.deps.json
+D:\a\review-case-s21b4\review-case-s21b4\Receiver\bin\Release\netcoreapp3.0\Receiver.runtimeconfig.json
+D:\a\review-case-s21b4\review-case-s21b4\Receiver\bin\Release\netcoreapp3.0\Receiver.runtimeconfig.dev.json
+D:\a\review-case-s21b4\review-case-s21b4\Receiver\bin\Release\netcoreapp3.0\Receiver.dll
+D:\a\review-case-s21b4\review-case-s21b4\Receiver\bin\Release\netcoreapp3.0\Receiver.pdb
+D:\a\review-case-s21b4\review-case-s21b4\Receiver\obj\Release\netcoreapp3.0\Receiver.csprojAssemblyReference.cache
+D:\a\review-case-s21b4\review-case-s21b4\Receiver\obj\Release\netcoreapp3.0\Receiver.AssemblyInfoInputs.cache
+D:\a\review-case-s21b4\review-case-s21b4\Receiver\obj\Release\netcoreapp3.0\Receiver.AssemblyInfo.cs
+D:\a\review-case-s21b4\review-case-s21b4\Receiver\obj\Release\netcoreapp3.0\Receiver.dll
+D:\a\review-case-s21b4\review-case-s21b4\Receiver\obj\Release\netcoreapp3.0\Receiver.pdb
