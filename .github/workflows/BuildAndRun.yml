@@ -41,6 +41,17 @@ jobs:
       
     - name:  Pipe Sender output to receiver
       run: Sender\bin\Release\netcoreapp3.0\Sender.exe | Receiver\bin\Release\netcoreapp3.0\Receiver.exe
+      
+    - name: Commit output files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Add changes" -a
+        
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}  
     
     - name:  Install resharper
       run: dotnet tool install -g JetBrains.ReSharper.GlobalTools
