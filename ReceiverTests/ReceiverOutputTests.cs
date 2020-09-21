@@ -72,7 +72,7 @@ namespace ReceiverTests
         [Fact]
         public void TestExpectingNoExceptionWhenFileFormatIsValid()
         {
-            CsvOutput mockOutput = new CsvOutput("output.csv");
+            CsvOutput object1 = new CsvOutput("output.csv");
             Assert.False(object1.OutputStatus);
             object1 = new CsvOutput("output.xlsx");
             Assert.False(object1.OutputStatus);
