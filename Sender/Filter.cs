@@ -20,7 +20,7 @@ namespace Sender
                 throw new IndexOutOfRangeException();
             }
         }
-        public static IEnumerable<IEnumerable<string>> GetDataFilteredByColumns
+        public IEnumerable<IEnumerable<string>> GetDataFilteredByColumns
             (IEnumerable<IEnumerable<string>> data, IEnumerable<int> columnNos)
         {
             int nColumns = ConsoleOutput.GetNumberOfColumns(data);
@@ -38,7 +38,7 @@ namespace Sender
             return outputData;
         }
 
-        public static IEnumerable<IEnumerable<string>> GetDataFilteredByColumns
+        public IEnumerable<IEnumerable<string>> GetDataFilteredByColumns
             (IEnumerable<IEnumerable<string>> data, int startCol, int endCol)
         {
             int nColumns = ConsoleOutput.GetNumberOfColumns(data);
