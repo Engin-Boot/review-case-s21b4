@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\ReceiverTests\\ReceiverTests.csproj": {}
+    "D:\\a\\review-case-s21b4\\review-case-s21b4\\ReceiverTests\\ReceiverTests.csproj": {}
   },
   "projects": {
-    "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\ReceiverTests\\ReceiverTests.csproj": {
+    "D:\\a\\review-case-s21b4\\review-case-s21b4\\ReceiverTests\\ReceiverTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\ReceiverTests\\ReceiverTests.csproj",
+        "projectUniqueName": "D:\\a\\review-case-s21b4\\review-case-s21b4\\ReceiverTests\\ReceiverTests.csproj",
         "projectName": "ReceiverTests",
-        "projectPath": "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\ReceiverTests\\ReceiverTests.csproj",
-        "packagesPath": "C:\\Users\\Aleena\\.nuget\\packages\\",
-        "outputPath": "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\ReceiverTests\\obj\\",
+        "projectPath": "D:\\a\\review-case-s21b4\\review-case-s21b4\\ReceiverTests\\ReceiverTests.csproj",
+        "packagesPath": "C:\\Users\\runneradmin\\.nuget\\packages\\",
+        "outputPath": "D:\\a\\review-case-s21b4\\review-case-s21b4\\ReceiverTests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Aleena\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\runneradmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -27,8 +31,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\Receiver\\Receiver.csproj": {
-                "projectPath": "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\Receiver\\Receiver.csproj"
+              "D:\\a\\review-case-s21b4\\review-case-s21b4\\Receiver\\Receiver.csproj": {
+                "projectPath": "D:\\a\\review-case-s21b4\\review-case-s21b4\\Receiver\\Receiver.csproj"
               }
             }
           }
@@ -42,9 +46,17 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "Castle.Core": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.2.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.14.0, )"
             },
             "coverlet.collector": {
               "target": "Package",
@@ -88,22 +100,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\hostedtoolcache\\windows\\dncs\\3.1.101\\x64\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\Receiver\\Receiver.csproj": {
+    "D:\\a\\review-case-s21b4\\review-case-s21b4\\Receiver\\Receiver.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\Receiver\\Receiver.csproj",
+        "projectUniqueName": "D:\\a\\review-case-s21b4\\review-case-s21b4\\Receiver\\Receiver.csproj",
         "projectName": "Receiver",
-        "projectPath": "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\Receiver\\Receiver.csproj",
-        "packagesPath": "C:\\Users\\Aleena\\.nuget\\packages\\",
-        "outputPath": "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\Receiver\\obj\\",
+        "projectPath": "D:\\a\\review-case-s21b4\\review-case-s21b4\\Receiver\\Receiver.csproj",
+        "packagesPath": "C:\\Users\\runneradmin\\.nuget\\packages\\",
+        "outputPath": "D:\\a\\review-case-s21b4\\review-case-s21b4\\Receiver\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Aleena\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\runneradmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -142,7 +158,7 @@
             },
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.0.3, 3.0.3]"
+              "version": "[3.0.2, 3.0.2]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
@@ -158,7 +174,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\hostedtoolcache\\windows\\dncs\\3.1.101\\x64\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

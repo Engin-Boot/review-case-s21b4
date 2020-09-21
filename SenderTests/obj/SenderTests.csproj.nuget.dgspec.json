@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\SenderTests\\SenderTests.csproj": {}
+    "D:\\a\\review-case-s21b4\\review-case-s21b4\\SenderTests\\SenderTests.csproj": {}
   },
   "projects": {
-    "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\SenderTests\\SenderTests.csproj": {
+    "D:\\a\\review-case-s21b4\\review-case-s21b4\\SenderTests\\SenderTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\SenderTests\\SenderTests.csproj",
+        "projectUniqueName": "D:\\a\\review-case-s21b4\\review-case-s21b4\\SenderTests\\SenderTests.csproj",
         "projectName": "SenderTests",
-        "projectPath": "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\SenderTests\\SenderTests.csproj",
-        "packagesPath": "C:\\Users\\Aleena\\.nuget\\packages\\",
-        "outputPath": "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\SenderTests\\obj\\",
+        "projectPath": "D:\\a\\review-case-s21b4\\review-case-s21b4\\SenderTests\\SenderTests.csproj",
+        "packagesPath": "C:\\Users\\runneradmin\\.nuget\\packages\\",
+        "outputPath": "D:\\a\\review-case-s21b4\\review-case-s21b4\\SenderTests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Aleena\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\runneradmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -27,8 +31,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\Sender\\Sender.csproj": {
-                "projectPath": "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\Sender\\Sender.csproj"
+              "D:\\a\\review-case-s21b4\\review-case-s21b4\\Sender\\Sender.csproj": {
+                "projectPath": "D:\\a\\review-case-s21b4\\review-case-s21b4\\Sender\\Sender.csproj"
               }
             }
           }
@@ -88,22 +92,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\hostedtoolcache\\windows\\dncs\\3.1.101\\x64\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\Sender\\Sender.csproj": {
+    "D:\\a\\review-case-s21b4\\review-case-s21b4\\Sender\\Sender.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\Sender\\Sender.csproj",
+        "projectUniqueName": "D:\\a\\review-case-s21b4\\review-case-s21b4\\Sender\\Sender.csproj",
         "projectName": "Sender",
-        "projectPath": "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\Sender\\Sender.csproj",
-        "packagesPath": "C:\\Users\\Aleena\\.nuget\\packages\\",
-        "outputPath": "E:\\BootCamp\\ReviewOfReviews\\DummyReviews\\Sender\\obj\\",
+        "projectPath": "D:\\a\\review-case-s21b4\\review-case-s21b4\\Sender\\Sender.csproj",
+        "packagesPath": "C:\\Users\\runneradmin\\.nuget\\packages\\",
+        "outputPath": "D:\\a\\review-case-s21b4\\review-case-s21b4\\Sender\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Aleena\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\runneradmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -142,7 +150,7 @@
             },
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.0.3, 3.0.3]"
+              "version": "[3.0.2, 3.0.2]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
@@ -158,7 +166,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\hostedtoolcache\\windows\\dncs\\3.1.101\\x64\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
