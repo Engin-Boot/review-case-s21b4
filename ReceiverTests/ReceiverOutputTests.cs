@@ -31,7 +31,7 @@ namespace ReceiverTests
     public class ReceiverOutputTests
     {
         [Fact]
-        public void TestExpectingStatusOfFileWrittenAsTrueWhenCalledWithDictionaryOfWordFrequency()
+        public void TestExpectingStatusOfFileWrittenAsTrueWhenCalledWithTwoDimensionalIEnumerableOfAnalysedData()
         {
             CsvOutput csvOutput = new CsvOutput("output.csv");
             List<List<string>> testInput = new List<List<string>>
@@ -44,7 +44,7 @@ namespace ReceiverTests
         }
 
         [Fact]
-        public void TestExpectingValidMockFileOutputWhenCalledWithDictionaryOfWordFrequency()
+        public void TestExpectingValidMockFileOutputWhenCalledWithTwoDimensionalIEnumerableOfAnalysedData()
         {
             CsvOutput mockOutput = new CsvOutput("output.csv");
             List<List<string>> testInput = new List<List<string>>
@@ -56,7 +56,7 @@ namespace ReceiverTests
         }
 
         [Fact]
-        public void TestExpectingFileOutputToBeEmptyWhenCalledWithEmptyIDictionary()
+        public void TestExpectingFileOutputToBeEmptyWhenCalledWithEmptyTwoDimensionalIEnumerableOfAnalysedData()
         {
             CsvOutput mockOutput = new CsvOutput("output.csv");
             mockOutput.WriteOutput(new List<List<string>>());
